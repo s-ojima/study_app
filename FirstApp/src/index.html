@@ -3,12 +3,24 @@
   <head>
     <meta charset="UTF-8">
     <title>Electron Text Editor</title>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="lib/ace/ace.js"></script>
+    <script src="lib/ace/mode-javascript.js"></script>
+    <script src="lib/ace/theme-twilight.js"></script>
+    <script src="editor.js"></script>
   </head>
 
-  <body>
-    <h1>初めてのElectron</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+  <body onload="onLoad()">
+  <div id="header_fixed">
+    <button type="button" class="btn-sm btn-primary" onclick="openLoadFile()">読み込み</button>
+    <button type="button" class="btn-sm btn-primary" onclick="saveFile()">保存</button>
+  </div>
+  <div id="footer_fixed">
+  </div>
+  <div id="input_area">
+    <div id="input_txt">
+    </div>
+  </div>
   </body>
 </html>
