@@ -38,3 +38,29 @@ function onLoad(){
 		return false;
 	};
 };
+
+
+/**
+ * 読み込みするためのファイルを開く
+ */
+
+ function openLoadFile(){
+ 	const win = BrowserWindow.getFocusedWindow();
+
+ 	dialog.showOpenDialog(
+ 		win,
+ 		{
+ 			properties: ['openFile'],
+ 			filters: [
+ 				{
+	 				name: 'Documents',
+	 				extension: ['txt', 'text', 'html', 'js']
+ 				}
+ 			]
+ 		},
+ 		function (filenames){
+ 			if(filenames){
+ 				readFile(filenames[0]);
+ 			}
+ 		});
+ }
